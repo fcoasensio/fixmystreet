@@ -637,6 +637,7 @@ sub admin_report_edit {
           ->search( { problem_id => $problem->id }, { order_by => 'created' } )
           ->all ];
 
+        $self->stash_states($problem);
         return 1;
     }
 
@@ -699,12 +700,86 @@ sub admin_report_edit {
             ->search( { problem_id => $problem->id }, { order_by => 'created' } )
             ->all ];
 
+        $self->stash_states($problem);
         return 1;
 
     }
 
+    $self->stash_states($problem);
     return 0;
 
+}
+
+sub stash_states {
+    my ($self, $problem) = @_;
+    my $c = $self->{c};
+
+    # current problem state affects which states are visible in dropdowns
+    my @states = (
+        {
+            # Erfasst
+            state => 'unconfirmed',
+            trans => _('Submitted'),
+            unconfirmed => 1,
+            hidden => 1,
+        },
+        {
+            # Aufgenommen
+            state => 'confirmed',
+            trans => _('Open'),
+            unconfirmed => 1,
+        },
+        {
+            # Rueckmeldung ausstehend
+            state => 'planned',
+            trans => _('Planned'),
+        },
+        {
+            # Unsichtbar (hidden)
+            state => 'hidden',
+            trans => _('Hidden'),
+            unconfirmed => 1,
+            hidden => 1,
+        },
+        {
+            # Extern
+            state => 'closed',
+            trans => _('Extern'),
+        },
+        {
+            # Zustaendigkeit unbekannt
+            state => 'unable to fix',
+            trans => _('Jurisdiction unknown'),
+        },
+        {
+            # Wunsch (hidden)
+            state => 'investigating',
+            trans => _('Wish'),
+        },
+        {
+            # Nicht kontaktierbar (hidden)
+            state => 'partial',
+            trans => _('Not contactable'),
+        },
+    );
+    my $state = $problem->state;
+    if ($state eq 'in progress') {
+        push @states, {
+            state => 'in progress',
+            trans => _('In progress'),
+        };
+    }
+    elsif ($state eq 'fixed - council') {
+        push @states, {
+            state => 'fixed - council',
+            trans => _('Closed'),
+        };
+    }
+    elsif ($state =~/^(hidden|unconfirmed)$/) {
+        @states = grep { $_->{$state} } @states;
+    }
+    $c->stash->{states} = \@states;
+    $c->stash->{states_debug} = Dumper($state, \@states); use Data::Dumper;
 }
 
 sub _admin_send_email {
