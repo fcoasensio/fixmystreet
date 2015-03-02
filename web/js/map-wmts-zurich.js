@@ -104,8 +104,8 @@ $(function(){
             //     "tileHeight": 512,
             //     "tileWidth": 512,
             //     "topLeftCorner": {
-            //         "lat": 30814500,
-            //         "lon": -29386400
+            //         "lat": 30814423,
+            //         "lon": -29386322
             //     }
             // },
             // {
@@ -117,8 +117,8 @@ $(function(){
             //     "tileHeight": 512,
             //     "tileWidth": 512,
             //     "topLeftCorner": {
-            //         "lat": 30814500,
-            //         "lon": -29386400
+            //         "lat": 30814423,
+            //         "lon": -29386322
             //     }
             // },
             {
@@ -130,8 +130,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -143,8 +143,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -156,8 +156,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -169,8 +169,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -182,8 +182,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -195,8 +195,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -208,8 +208,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -221,8 +221,8 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             },
             {
@@ -234,11 +234,11 @@ $(function(){
                 "tileHeight": 512,
                 "tileWidth": 512,
                 "topLeftCorner": {
-                    "lat": 30814500,
-                    "lon": -29386400
+                    "lat": 30814423,
+                    "lon": -29386322
                 }
             }
-        ],
+        ]
     };
     fixmystreet.layer_options = [
         layer_options, OpenLayers.Util.applyDefaults({
