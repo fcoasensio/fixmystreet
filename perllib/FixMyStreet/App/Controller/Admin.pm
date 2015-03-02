@@ -373,6 +373,15 @@ sub update_contacts : Private {
         $contact->api_key( $c->req->param('api_key') );
         $contact->send_method( $c->req->param('send_method') );
 
+        # Set the photo_required flag in extra to the appropriate value
+        if ( $c->req->param('photo_required') ) {
+            $contact->set_extra_metadata( $c, photo_required => 1 )
+                unless $contact->get_extra_metadata($c, 'photo_required');
+        }
+        else {
+            $contact->unset_extra_metadata( $c, 'photo_required' );
+        }
+
         if ( %errors ) {
             $c->stash->{updated} = _('Please correct the errors below');
             $c->stash->{contact} = $contact;
