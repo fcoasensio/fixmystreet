@@ -157,7 +157,7 @@ sub get_image_data {
     my ($self, %args) = @_;
     my $num = $args{num} || 0;
 
-    my $data = $self->get_raw_image_data( $num ) # for test, because of broken IE/Windows caching
+    my $data = $self->get_raw_image_data( $num )
         or return;
 
     my ($fileid, $photo) = @$data;
